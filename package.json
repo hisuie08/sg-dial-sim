@@ -1,93 +1,89 @@
 {
-	"name": "sg-dial-sim",
-	"version": "0.2.2",
-	"author": "Philip Fulgham (https://philipf5.dev)",
-	"license": "MIT",
-	"private": true,
-	"main": "main.js",
-	"repository": "github:philipf5/sg-dial-sim",
-	"scripts": {
-		"ng": "ng",
-		"start": "ng build --watch",
-		"serve": "ng serve",
-		"build": "ng build --prod --base-href ./",
-		"package": "electron-builder build --mac --universal && electron-builder build --win",
-		"lint": "ng lint",
-		"electron": "electron ."
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "pretty-quick --staged"
-		}
-	},
-	"build": {
-		"appId": "com.philipf5.sg-dial-sim",
-		"productName": "SG Dial Sim",
-		"artifactName": "${productName} ${version}-${os}.${ext}",
-		"afterSign": "notarize.js",
-		"directories": {
-			"output": "electron-build"
-		},
-		"files": [
-			"dist/",
-			"main.js",
-			"package.json"
-		],
-		"mac": {
-			"artifactName": "${productName} ${version}-${os}-${arch}.${ext}",
-			"category": "public.app-category.games",
-			"entitlements": "build/entitlements.mac.plist",
-			"entitlementsInherit": "build/entitlements.mac.plist",
-			"gatekeeperAssess": false,
-			"hardenedRuntime": true,
-			"target": "dmg"
-		},
-		"win": {
-			"target": "portable"
-		},
-		"dmg": {
-			"sign": false
-		}
-	},
-	"dependencies": {
-		"@angular/animations": "10.0.4",
-		"@angular/common": "10.0.4",
-		"@angular/compiler": "10.0.4",
-		"@angular/core": "10.0.4",
-		"@angular/forms": "10.0.4",
-		"@angular/platform-browser": "10.0.4",
-		"@angular/platform-browser-dynamic": "10.0.4",
-		"@angular/router": "10.0.4",
-		"@ngrx/effects": "9.2.0",
-		"@ngrx/store": "9.2.0",
-		"@ngrx/store-devtools": "9.2.0",
-		"core-js": "2.6.1",
-		"electron-reloader": "1.0.1",
-		"electron-store": "5.2.0",
-		"gsap": "3.4.0",
-		"lodash-es": "4.17.15",
-		"ngx-electron": "2.2.0",
-		"rxjs": "6.5.3",
-		"sass": "1.26.10",
-		"tslib": "^2.0.0",
-		"zone.js": "~0.10.2"
-	},
-	"devDependencies": {
-		"@angular-devkit/build-angular": "~0.1000.3",
-		"@angular/cli": "10.0.3",
-		"@angular/compiler-cli": "10.0.4",
-		"@angular/language-service": "10.0.4",
-		"@types/lodash-es": "4.17.3",
-		"@types/node": "15.6.1",
-		"dotenv": "8.2.0",
-		"electron": "13.0.1",
-		"electron-builder": "22.10.5",
-		"electron-notarize": "1.0.0",
-		"husky": "4.2.5",
-		"prettier": "2.0.5",
-		"pretty-quick": "2.0.1",
-		"ts-node": "8.10.2",
-		"tslint": "~6.1.0",
-		"typescript": "3.9.6"
-	}
+    "name": "sg-dial-sim",
+    "version": "0.2.2",
+    "author": "Philip Fulgham (https://philipf5.dev)",
+    "license": "MIT",
+    "private": true,
+    "main": "main.js",
+    "repository": "github:philipf5/sg-dial-sim",
+    "scripts": {
+        "ng": "ng",
+        "start": "ng build --watch",
+        "serve": "ng serve",
+        "build": "ng build --prod --base-href ./",
+        "package": "electron-builder build --mac --universal && electron-builder build --win",
+        "lint": "ng lint",
+        "electron": "electron .",
+        "deploy": "gh-pages -d dist"
+    },
+    "build": {
+        "appId": "com.philipf5.sg-dial-sim",
+        "productName": "SG Dial Sim",
+        "artifactName": "${productName} ${version}-${os}.${ext}",
+        "afterSign": "notarize.js",
+        "directories": {
+            "output": "electron-build"
+        },
+        "files": [
+            "dist/",
+            "main.js",
+            "package.json"
+        ],
+        "mac": {
+            "artifactName": "${productName} ${version}-${os}-${arch}.${ext}",
+            "category": "public.app-category.games",
+            "entitlements": "build/entitlements.mac.plist",
+            "entitlementsInherit": "build/entitlements.mac.plist",
+            "gatekeeperAssess": false,
+            "hardenedRuntime": true,
+            "target": "dmg"
+        },
+        "win": {
+            "target": "portable"
+        },
+        "dmg": {
+            "sign": false
+        }
+    },
+    "dependencies": {
+        "@angular/animations": "10.0.4",
+        "@angular/common": "10.0.4",
+        "@angular/compiler": "10.0.4",
+        "@angular/core": "10.0.4",
+        "@angular/forms": "10.0.4",
+        "@angular/platform-browser": "10.0.4",
+        "@angular/platform-browser-dynamic": "10.0.4",
+        "@angular/router": "10.0.4",
+        "@ngrx/effects": "9.2.0",
+        "@ngrx/store": "9.2.0",
+        "@ngrx/store-devtools": "9.2.0",
+        "core-js": "2.6.1",
+        "electron-reloader": "1.0.1",
+        "electron-store": "5.2.0",
+        "gsap": "3.4.0",
+        "lodash-es": "4.17.15",
+        "ngx-electron": "2.2.0",
+        "rxjs": "6.5.3",
+        "sass": "1.26.10",
+        "tslib": "^2.0.0",
+        "zone.js": "~0.10.2"
+    },
+    "devDependencies": {
+        "@angular-devkit/build-angular": "~0.1000.3",
+        "@angular/cli": "10.0.3",
+        "@angular/compiler-cli": "10.0.4",
+        "@angular/language-service": "10.0.4",
+        "@types/lodash-es": "4.17.3",
+        "@types/node": "15.6.1",
+        "dotenv": "8.2.0",
+        "electron": "13.0.1",
+        "electron-builder": "22.10.5",
+        "electron-notarize": "1.0.0",
+        "husky": "4.2.5",
+        "prettier": "2.0.5",
+        "pretty-quick": "2.0.1",
+        "ts-node": "8.10.2",
+        "tslint": "~6.1.0",
+        "typescript": "3.9.6"
+    }
 }
