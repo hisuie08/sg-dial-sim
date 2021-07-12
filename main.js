@@ -9,7 +9,7 @@ function createWindow() {
 		height: 768,
 		backgroundColor: "#000000",
 		useContentSize: true,
-		resizable: false,
+		resizable: true,
 		fullscreen: true,
 		webPreferences: {
 			contextIsolation: false,
